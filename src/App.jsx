@@ -1,62 +1,77 @@
-import { LineChart } from "@mui/x-charts/LineChart";
+import { LineChart } from '@mui/x-charts/LineChart';
+import { todistusvalinta_dataset } from './todistusvalinta-data.js';
 
 function App() {
-    return (
-        <div>
-            <h3>TKT-todistusvalinta ensikertalaisille hakijoille</h3>
-            <LineChart
-                xAxis={[
-                    {
-                        data: [2020, 2021, 2022, 2023, 2024],
-                        valueFormatter: (value) => value.toString(),
-                        scaleType: "point",
-                        label: "Vuosi",
-                    },
-                ]}
-                yAxis={[
-                    {
-                        id: "helsinki",
-                        label: "Pisteraja",
-                        min: 70,
-                        max: 90,
-                    },
-                    {
-                        id: "tampere",
-                        label: "Pisteraja",
-                        min: 70,
-                        max: 90,
-                    },
-                    {
-                        id: "turku",
-                        label: "Pisteraja",
-                        min: 70,
-                        max: 90,
-                    },
-                ]}
-                series={[
-                    {
-                        yAxisId: "helsinki",
-                        label: "Helsingin yliopisto",
-                        data: [87.7, 84.3, 84.6, 82.5, 75.8],
-                    },
-                    {
-                        yAxisId: "tampere",
-                        label: "Tampereen yliopisto",
-                        data: [76.8, 72.3, 73, 81.1, 82.3],
-                    },
-                    {
-                        yAxisId: "turku",
-                        label: "Turun yliopisto",
-                        data: [73.3, 77.8, 70.9, 78.5, 85.4],
-                    },
-                ]}
-                width={600}
-                height={300}
-            />
-            <br></br>
-            <a href="https://www.cs.helsinki.fi/u/tonylam/">Tony Lam</a>
-        </div>
-    );
+  return (
+    <div>
+      <div
+        style={{
+          height: '500px',
+          width: '100%',
+          maxWidth: '900px',
+          margin: 'auto',
+        }}
+      >
+        <h3>TKT-todistusvalinta ensikertalaisille hakijoille</h3>
+        <LineChart
+          dataset={todistusvalinta_dataset}
+          xAxis={[
+            {
+              dataKey: 'year',
+              valueFormatter: (value) => value.toString(),
+              scaleType: 'point',
+              label: 'Vuosi',
+            },
+          ]}
+          series={[
+            {
+              dataKey: 'helsinki',
+              label: 'Helsingin yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'tampere',
+              label: 'Tampereen yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'turku',
+              label: 'Turun yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'oulu',
+              label: 'Oulun yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'jyväskylä',
+              label: 'Jyväskylän yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'joensuu',
+              label: 'Joensuu - Itä-Suomen yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+            {
+              dataKey: 'kuopio',
+              label: 'Kuopio - Itä-Suomen yliopisto',
+              valueFormatter: (value) => `${value}`,
+            },
+          ]}
+          yAxis={[{ min: 55, max: 95, label: 'Pisteraja' }]}
+        />
+      </div>
+      <br />
+      <a href='https://www.cs.helsinki.fi/u/tonylam/'>Tony Lam</a>
+      <br />
+      Lähde:{' '}
+      <a href='https://vipunen.fi/fi-fi/yliopisto/Sivut/Hakeneet-ja-hyv%C3%A4ksytyt.aspx'>
+        Vipunen - OPH
+      </a>
+    </div>
+  );
 }
 
 export default App;
