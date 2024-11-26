@@ -1,4 +1,6 @@
 import { LineChart } from '@mui/x-charts/LineChart';
+import { mangoFusionPalette } from '@mui/x-charts/colorPalettes';
+
 import { todistusvalinta_dataset } from './todistusvalinta-data.js';
 import './App.css';
 
@@ -8,6 +10,7 @@ function App() {
       <div className='chart'>
         <h3>TKT-todistusvalinta ensikertalaisille hakijoille</h3>
         <LineChart
+          colors={mangoFusionPalette}
           margin={{
             left: 80,
             right: 80,
