@@ -3,12 +3,14 @@ import { LineChart } from '@mui/x-charts';
 import { mangoFusionPalette } from '@mui/x-charts/colorPalettes';
 
 const TodistusvalintaChart = ({ todistusvalinta_dataset }) => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <LineChart
       colors={mangoFusionPalette}
       grid={{ vertical: true, horizontal: false }}
       margin={{
-        top: 140,
+        top: isMobile ? 200 : 100,
         bottom: 80,
       }}
       dataset={todistusvalinta_dataset}

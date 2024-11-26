@@ -5,12 +5,14 @@ import { mangoFusionPalette } from '@mui/x-charts/colorPalettes';
 const Koevalinta_ensikertalaiset_chart = ({
   ensikekoevalinta_ensikertalainen_dataset,
 }) => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <LineChart
       colors={mangoFusionPalette}
       grid={{ vertical: true, horizontal: false }}
       margin={{
-        top: 140,
+        top: isMobile ? 200 : 80,
         bottom: 80,
       }}
       dataset={ensikekoevalinta_ensikertalainen_dataset}
