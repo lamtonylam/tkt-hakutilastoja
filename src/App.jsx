@@ -1,19 +1,19 @@
 import { LineChart } from '@mui/x-charts/LineChart';
 import { todistusvalinta_dataset } from './todistusvalinta-data.js';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <div
-        style={{
-          height: '500px',
-          width: '100%',
-          maxWidth: '900px',
-          margin: 'auto',
-        }}
-      >
+      <div className='chart'>
         <h3>TKT-todistusvalinta ensikertalaisille hakijoille</h3>
         <LineChart
+          margin={{
+            left: 80,
+            right: 80,
+            top: 140,
+            bottom: 80,
+          }}
           dataset={todistusvalinta_dataset}
           xAxis={[
             {
