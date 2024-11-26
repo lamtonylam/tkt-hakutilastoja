@@ -7,8 +7,6 @@ const TodistusvalintaChart = ({ todistusvalinta_dataset }) => {
     <LineChart
       colors={mangoFusionPalette}
       margin={{
-        left: 80,
-        right: 80,
         top: 140,
         bottom: 80,
       }}

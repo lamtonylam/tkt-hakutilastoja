@@ -9,8 +9,6 @@ const Koevalinta_ensikertalaiset_chart = ({
     <LineChart
       colors={mangoFusionPalette}
       margin={{
-        left: 80,
-        right: 80,
         top: 140,
         bottom: 80,
       }}
@@ -60,7 +58,7 @@ const Koevalinta_ensikertalaiset_chart = ({
           valueFormatter: (value) => `${value}`,
         },
       ]}
-      yAxis={[{ min: 0, max: 60, label: 'Pisteraja' }]}
+      yAxis={[{ min: 5, max: 70, label: 'Pisteraja' }]}
     />
   );
 };
