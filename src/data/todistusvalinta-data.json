@@ -45,6 +45,16 @@
       "jyväskylä": 83.0,
       "joensuu": 57.9,
       "kuopio": 57.1
-    }
+    },
+       {
+      "year": 2025,
+      "helsinki": 74.8,
+      "tampere": 69.3,
+      "turku": 70.5,
+      "oulu": 66.3,
+      "jyväskylä": 85.9,
+      "joensuu": 57.6,
+      "kuopio": 56.2
+    }, 
   ]
 }
